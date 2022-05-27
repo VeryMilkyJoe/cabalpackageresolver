@@ -4,4 +4,6 @@ pkg(graphics,0,2,2,0).
 pkg(lists, 2,1,0,0).
 pkg(matrices, 3,0,0,1).
 pkg(lists, 2,0,1,0).
-pkg(strings,5,3,2,0).
+pkg(strings,5,5,2,0).
+pkg(colours,1,2,3,4).
+pkg(colours,1,6,3,4).

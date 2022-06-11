@@ -11,3 +11,7 @@ wanted(lists).
 wanted(matrices).
 wanted(strings).
 wanted(colours).
+wanted(or).
+lt(or,1,2,-1,-1) | get(or, 1,2,-1,-1).
+
+

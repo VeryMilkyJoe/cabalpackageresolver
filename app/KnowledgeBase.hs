@@ -46,7 +46,7 @@ run input = do
                     _ -> liftIO $ putStrLn $ "Unexpected json! Json: " ++ show json
 
     -- create knowledge base file for resolver
-    T.writeFile "knowledge.txt" ""
+    T.writeFile ("testdata" </> "knowledge.txt") ""
     forM_ pkgNames $ \pkg -> do
         T.readFile ("versions" </> T.unpack pkg <.> "txt") >>= T.appendFile "knowledge.txt"
 

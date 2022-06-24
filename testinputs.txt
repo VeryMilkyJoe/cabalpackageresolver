@@ -1,0 +1,127 @@
+wanted(aeson).
+get(aeson,(1, 4, 5, -1)).
+lt(aeson,(2, 1, -1, -1)).
+wanted(base).
+get(base,(4, 8, -1, -1)).
+lt(base,(5, -1, -1, -1)).
+wanted(base16_bytestring).
+get(base16_bytestring,(0, 1, 1, -1)).
+lt(base16_bytestring,(1, 1, -1, -1)).
+wanted(bytestring).
+get(bytestring,(0, 10, 8, -1)).
+lt(bytestring,(0, 12, -1, -1)).
+wanted(conduit).
+get(conduit,(1, 3, -1, -1)).
+lt(conduit,(2, -1, -1, -1)).
+wanted(conduit_extra).
+get(conduit_extra,(1, 3, -1, -1)).
+lt(conduit_extra,(2, -1, -1, -1)).
+wanted(containers).
+get(containers,(0, 5, 10, -1)).
+lt(containers,(0, 7, -1, -1)).
+wanted(cryptohash_sha1).
+get(cryptohash_sha1,(0, 11, 100, -1)).
+lt(cryptohash_sha1,(0, 12, -1, -1)).
+wanted(deepseq).
+get(deepseq,(1, 4, 3, -1)).
+lt(deepseq,(1, 5, -1, -1)).
+wanted(directory).
+get(directory,(1, 3, 0, -1)).
+lt(directory,(1, 4, -1, -1)).
+wanted(exceptions).
+compW(exceptions,(0, 10, -1, -1)).
+wanted(extra).
+get(extra,(1, 6, 14, -1)).
+lt(extra,(1, 8, -1, -1)).
+wanted(file_embed).
+get(file_embed,(0, 0, 11, -1)).
+lt(file_embed,(1, -1, -1, -1)).
+wanted(filepath).
+get(filepath,(1, 4, 1, -1)).
+lt(filepath,(1, 5, -1, -1)).
+wanted(ghc).
+get(ghc,(8, 6, 1, -1)).
+lt(ghc,(9, 3, -1, -1)).
+wanted(hslogger).
+get(hslogger,(1, 2, -1, -1)).
+lt(hslogger,(1, 4, -1, -1)).
+wanted(process).
+get(process,(1, 6, 1, -1)).
+lt(process,(1, 7, -1, -1)).
+wanted(temporary).
+get(temporary,(1, 2, -1, -1)).
+lt(temporary,(1, 4, -1, -1)).
+wanted(text).
+get(text,(1, 2, 3, -1)).
+lt(text,(2, 1, -1, -1)).
+wanted(time).
+get(time,(1, 8, 0, -1)).
+lt(time,(1, 13, -1, -1)).
+wanted(transformers).
+get(transformers,(0, 5, 2, -1)).
+lt(transformers,(0, 7, -1, -1)).
+wanted(unix_compat).
+get(unix_compat,(0, 5, 1, -1)).
+lt(unix_compat,(0, 6, -1, -1)).
+wanted(unordered_containers).
+get(unordered_containers,(0, 2, 9, -1)).
+lt(unordered_containers,(0, 3, -1, -1)).
+wanted(vector).
+get(vector,(0, 12, 0, -1)).
+lt(vector,(0, 13, -1, -1)).
+wanted(yaml).
+get(yaml,(0, 10, 0, -1)).
+lt(yaml,(0, 12, -1, -1)).
+wanted(base).
+get(base,(4, 9, -1, -1)).
+lt(base,(5, -1, -1, -1)).
+wanted(directory).
+get(directory,(0, -1, -1, -1)).
+wanted(filepath).
+get(filepath,(0, -1, -1, -1)).
+wanted(ghc).
+get(ghc,(0, -1, -1, -1)).
+wanted(hie_bios).
+get(hie_bios,(0, -1, -1, -1)).
+wanted(optparse_applicative).
+get(optparse_applicative,(0, -1, -1, -1)).
+wanted(aeson).
+get(aeson,(0, -1, -1, -1)).
+wanted(base).
+get(base,(0, -1, -1, -1)).
+wanted(filepath).
+get(filepath,(0, -1, -1, -1)).
+wanted(hie_bios).
+get(hie_bios,(0, -1, -1, -1)).
+wanted(tasty).
+get(tasty,(0, -1, -1, -1)).
+wanted(tasty_hunit).
+get(tasty_hunit,(0, -1, -1, -1)).
+wanted(text).
+get(text,(0, -1, -1, -1)).
+wanted(unordered_containers).
+get(unordered_containers,(0, -1, -1, -1)).
+wanted(yaml).
+get(yaml,(0, -1, -1, -1)).
+wanted(base).
+get(base,(0, -1, -1, -1)).
+wanted(directory).
+get(directory,(0, -1, -1, -1)).
+wanted(extra).
+get(extra,(0, -1, -1, -1)).
+wanted(filepath).
+get(filepath,(0, -1, -1, -1)).
+wanted(ghc).
+get(ghc,(0, -1, -1, -1)).
+wanted(hie_bios).
+get(hie_bios,(0, -1, -1, -1)).
+wanted(tagged).
+get(tagged,(0, -1, -1, -1)).
+wanted(tasty).
+get(tasty,(0, -1, -1, -1)).
+wanted(tasty_expected_failure).
+get(tasty_expected_failure,(0, -1, -1, -1)).
+wanted(tasty_hunit).
+get(tasty_hunit,(0, -1, -1, -1)).
+wanted(temporary).
+get(temporary,(0, -1, -1, -1)).

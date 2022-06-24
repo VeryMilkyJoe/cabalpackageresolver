@@ -5,7 +5,7 @@ greatestLB(N,V1) :- get(N,V1), not hasGreaterLB(N,V1).
 hasSmallerUB(N,V1) :- lt(N,V1), lt(N,V2), V2<V1.
 hasGreaterLB(N,V1) :- get(N,V1), get(N,V2), V1<V2.
 % there should be no upper and lower bounds that are incompatible
-:- smallestUB(N,Vu), greatestLB(N,Vl), Vu<=Vl.
+error("incompatible upper and lower bounds", N ,Vu, Vl):- smallestUB(N,Vu), greatestLB(N,Vl), Vu<=Vl.
 
 % a package version is viable if it satisfies the constraints and is wanted
 viable(N,V) :- pkg(N,V), wanted(N), not nonViable(N,V).
@@ -19,13 +19,17 @@ chosen(N,V) |  -chosen(N,V) :- viable(N,V).
 % we should always choose exactly one package if it is wanted
 %
 %% we cant choose none
-:- not chosen(N,_), wanted(N).
+error("no viable version for package", N) :- not chosen(N,_), wanted(N).
 %% we cant choose more than one
-:- chosen(N,V1), chosen(N,V2), V1!=V2.
+error("two versions of package chosen", N) :- chosen(N,V1), chosen(N,V2), V1!=V2.
 
 % we should always choose the newest package
 :- chosen(N,V1), viable(N,V2), V1<V2.
 
+:- error(_,_).
+:- error(_,_,_,_).
+
+
 #show chosen/2.
-#show viable/2.
-#show pkg/2.
+%#show viable/2.
+%#show pkg/2.

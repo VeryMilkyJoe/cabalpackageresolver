@@ -27,3 +27,8 @@ cabal.project.local~
 .ghc.environment.*
 
 # End of https://www.toptal.com/developers/gitignore/api/haskell
+
+# don't remember versions db
+versions/
+# ignore knowledge database
+big-db/

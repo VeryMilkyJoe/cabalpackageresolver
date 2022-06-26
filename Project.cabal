@@ -27,7 +27,7 @@ executable Project
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
-    other-modules: Parser, KnowledgeBase
+    other-modules: KnowledgeBase
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -37,8 +37,12 @@ executable Project
                       req,
                       aeson,
                       directory,
-                      filepath
+                      filepath,
+                      streaming,
+                      Cabal,
+                      async
 
 
     hs-source-dirs:   app
+    ghc-options: -Wall
     default-language: Haskell2010

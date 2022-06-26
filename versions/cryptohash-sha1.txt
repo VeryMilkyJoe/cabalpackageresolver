@@ -1,5 +1,0 @@
-pkg(cryptohash_sha1, (0, 11, 100, 0)).
-pkg(cryptohash_sha1, (0, 11, 100, 1)).
-pkg(cryptohash_sha1, (0, 11, 101, 0)).
-pkg(cryptohash_sha1, (0, 11, 7, 1)).
-pkg(cryptohash_sha1, (0, 11, 7, 2)).

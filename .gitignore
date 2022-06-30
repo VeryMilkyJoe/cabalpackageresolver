@@ -28,7 +28,11 @@ cabal.project.local~
 
 # End of https://www.toptal.com/developers/gitignore/api/haskell
 
+# special
+
 # don't remember versions db
 versions/
 # ignore knowledge database
 big-db/
+
+dontcommit

@@ -1,0 +1,498 @@
+pkg("base", (3, 0, 3, 1)).
+wanted("base") :- chosen("base", (3, 0, 3, 1)).
+get("base", (4, 0, -1, -1)) :- chosen("base", (3, 0, 3, 1)).
+lt("base", (4, 2, -1, -1)) :- chosen("base", (3, 0, 3, 1)).
+wanted("syb") :- chosen("base", (3, 0, 3, 1)).
+get("syb", (0, 1, -1, -1)) :- chosen("base", (3, 0, 3, 1)).
+lt("syb", (0, 2, -1, -1)) :- chosen("base", (3, 0, 3, 1)).
+pkg("base", (3, 0, 3, 2)).
+wanted("base") :- chosen("base", (3, 0, 3, 2)).
+get("base", (4, 0, -1, -1)) :- chosen("base", (3, 0, 3, 2)).
+lt("base", (4, 3, -1, -1)) :- chosen("base", (3, 0, 3, 2)).
+wanted("syb") :- chosen("base", (3, 0, 3, 2)).
+get("syb", (0, 1, -1, -1)) :- chosen("base", (3, 0, 3, 2)).
+lt("syb", (0, 2, -1, -1)) :- chosen("base", (3, 0, 3, 2)).
+pkg("base", (4, 0, 0, 0)).
+wanted("rts") :- chosen("base", (4, 0, 0, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 0, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 0, 0, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 0, 0, 0)).
+wanted("integer") :- chosen("base", (4, 0, 0, 0)).
+get("integer", (0, -1, -1, -1)) :- chosen("base", (4, 0, 0, 0)).
+pkg("base", (4, 10, 0, 0)).
+wanted("rts") :- chosen("base", (4, 10, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 10, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 10, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 10, 0, 0)).
+get("ghc_prim", (0, 5, -1, -1)) :- chosen("base", (4, 10, 0, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("base", (4, 10, 0, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 10, 0, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 10, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 10, 0, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 10, 0, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 10, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 10, 0, 0)).
+get("integer_gmp", (1, 0, -1, -1)) :- chosen("base", (4, 10, 0, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 10, 0, 0)).
+pkg("base", (4, 1, 0, 0)).
+wanted("rts") :- chosen("base", (4, 1, 0, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 1, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 1, 0, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 1, 0, 0)).
+wanted("integer") :- chosen("base", (4, 1, 0, 0)).
+get("integer", (0, -1, -1, -1)) :- chosen("base", (4, 1, 0, 0)).
+pkg("base", (4, 10, 1, 0)).
+wanted("rts") :- chosen("base", (4, 10, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 10, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 10, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 10, 1, 0)).
+get("ghc_prim", (0, 5, 1, 0)) :- chosen("base", (4, 10, 1, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("base", (4, 10, 1, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 10, 1, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 10, 1, 0)).
+wanted("integer_simple") :- chosen("base", (4, 10, 1, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 10, 1, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 10, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 10, 1, 0)).
+get("integer_gmp", (1, 0, 1, -1)) :- chosen("base", (4, 10, 1, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 10, 1, 0)).
+pkg("base", (4, 11, 0, 0)).
+wanted("rts") :- chosen("base", (4, 11, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 11, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 11, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 11, 0, 0)).
+get("ghc_prim", (0, 5, -1, -1)) :- chosen("base", (4, 11, 0, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("base", (4, 11, 0, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 11, 0, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 11, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 11, 0, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 11, 0, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 11, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 11, 0, 0)).
+get("integer_gmp", (1, 0, -1, -1)) :- chosen("base", (4, 11, 0, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 11, 0, 0)).
+pkg("base", (4, 11, 1, 0)).
+wanted("rts") :- chosen("base", (4, 11, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 11, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 11, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 11, 1, 0)).
+get("ghc_prim", (0, 5, -1, -1)) :- chosen("base", (4, 11, 1, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("base", (4, 11, 1, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 11, 1, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 11, 1, 0)).
+wanted("integer_simple") :- chosen("base", (4, 11, 1, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 11, 1, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 11, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 11, 1, 0)).
+get("integer_gmp", (1, 0, -1, -1)) :- chosen("base", (4, 11, 1, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 11, 1, 0)).
+pkg("base", (4, 12, 0, 0)).
+wanted("rts") :- chosen("base", (4, 12, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 12, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 12, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 12, 0, 0)).
+get("ghc_prim", (0, 5, 3, -1)) :- chosen("base", (4, 12, 0, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("base", (4, 12, 0, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 12, 0, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 12, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 12, 0, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 12, 0, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 12, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 12, 0, 0)).
+get("integer_gmp", (1, 0, 1, -1)) :- chosen("base", (4, 12, 0, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 12, 0, 0)).
+pkg("base", (4, 13, 0, 0)).
+wanted("rts") :- chosen("base", (4, 13, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 13, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 13, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 13, 0, 0)).
+get("ghc_prim", (0, 5, 3, -1)) :- chosen("base", (4, 13, 0, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("base", (4, 13, 0, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 13, 0, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 13, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 13, 0, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 13, 0, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 13, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 13, 0, 0)).
+get("integer_gmp", (1, 0, 1, -1)) :- chosen("base", (4, 13, 0, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 13, 0, 0)).
+pkg("base", (4, 14, 0, 0)).
+wanted("rts") :- chosen("base", (4, 14, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 14, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 14, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 14, 0, 0)).
+get("ghc_prim", (0, 6, 1, -1)) :- chosen("base", (4, 14, 0, 0)).
+lt("ghc_prim", (0, 7, -1, -1)) :- chosen("base", (4, 14, 0, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 14, 0, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 14, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 14, 0, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 14, 0, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 14, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 14, 0, 0)).
+get("integer_gmp", (1, 0, 1, -1)) :- chosen("base", (4, 14, 0, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 14, 0, 0)).
+pkg("base", (4, 14, 1, 0)).
+wanted("rts") :- chosen("base", (4, 14, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 14, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 14, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 14, 1, 0)).
+get("ghc_prim", (0, 6, 1, -1)) :- chosen("base", (4, 14, 1, 0)).
+lt("ghc_prim", (0, 7, -1, -1)) :- chosen("base", (4, 14, 1, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 14, 1, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 14, 1, 0)).
+wanted("integer_simple") :- chosen("base", (4, 14, 1, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 14, 1, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 14, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 14, 1, 0)).
+get("integer_gmp", (1, 0, 1, -1)) :- chosen("base", (4, 14, 1, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 14, 1, 0)).
+pkg("base", (4, 14, 2, 0)).
+wanted("rts") :- chosen("base", (4, 14, 2, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 14, 2, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 14, 2, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 14, 2, 0)).
+get("ghc_prim", (0, 5, 1, 0)) :- chosen("base", (4, 14, 2, 0)).
+lt("ghc_prim", (0, 7, -1, -1)) :- chosen("base", (4, 14, 2, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 14, 2, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 14, 2, 0)).
+wanted("integer_simple") :- chosen("base", (4, 14, 2, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 14, 2, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 14, 2, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 14, 2, 0)).
+get("integer_gmp", (1, 0, 1, -1)) :- chosen("base", (4, 14, 2, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 14, 2, 0)).
+pkg("base", (4, 14, 3, 0)).
+wanted("rts") :- chosen("base", (4, 14, 3, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 14, 3, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 14, 3, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 14, 3, 0)).
+get("ghc_prim", (0, 5, 1, 0)) :- chosen("base", (4, 14, 3, 0)).
+lt("ghc_prim", (0, 7, -1, -1)) :- chosen("base", (4, 14, 3, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 14, 3, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 14, 3, 0)).
+wanted("integer_simple") :- chosen("base", (4, 14, 3, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 14, 3, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 14, 3, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 14, 3, 0)).
+get("integer_gmp", (1, 0, 1, -1)) :- chosen("base", (4, 14, 3, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 14, 3, 0)).
+pkg("base", (4, 15, 0, 0)).
+wanted("rts") :- chosen("base", (4, 15, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 15, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 15, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 15, 0, 0)).
+get("ghc_prim", (0, 5, 1, 0)) :- chosen("base", (4, 15, 0, 0)).
+lt("ghc_prim", (0, 8, -1, -1)) :- chosen("base", (4, 15, 0, 0)).
+wanted("ghc_bignum") :- chosen("base", (4, 15, 0, 0)).
+get("ghc_bignum", (1, 0, -1, -1)) :- chosen("base", (4, 15, 0, 0)).
+lt("ghc_bignum", (2, 0, -1, -1)) :- chosen("base", (4, 15, 0, 0)).
+pkg("base", (4, 15, 1, 0)).
+wanted("rts") :- chosen("base", (4, 15, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 15, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 15, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 15, 1, 0)).
+get("ghc_prim", (0, 5, 1, 0)) :- chosen("base", (4, 15, 1, 0)).
+lt("ghc_prim", (0, 8, -1, -1)) :- chosen("base", (4, 15, 1, 0)).
+wanted("ghc_bignum") :- chosen("base", (4, 15, 1, 0)).
+get("ghc_bignum", (1, 0, -1, -1)) :- chosen("base", (4, 15, 1, 0)).
+lt("ghc_bignum", (2, 0, -1, -1)) :- chosen("base", (4, 15, 1, 0)).
+pkg("base", (4, 16, 0, 0)).
+wanted("rts") :- chosen("base", (4, 16, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 16, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 16, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 16, 0, 0)).
+get("ghc_prim", (0, 5, 1, 0)) :- chosen("base", (4, 16, 0, 0)).
+lt("ghc_prim", (0, 9, -1, -1)) :- chosen("base", (4, 16, 0, 0)).
+wanted("ghc_bignum") :- chosen("base", (4, 16, 0, 0)).
+get("ghc_bignum", (1, 0, -1, -1)) :- chosen("base", (4, 16, 0, 0)).
+lt("ghc_bignum", (2, 0, -1, -1)) :- chosen("base", (4, 16, 0, 0)).
+pkg("base", (4, 16, 1, 0)).
+wanted("rts") :- chosen("base", (4, 16, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 16, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 16, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 16, 1, 0)).
+get("ghc_prim", (0, 5, 1, 0)) :- chosen("base", (4, 16, 1, 0)).
+lt("ghc_prim", (0, 9, -1, -1)) :- chosen("base", (4, 16, 1, 0)).
+wanted("ghc_bignum") :- chosen("base", (4, 16, 1, 0)).
+get("ghc_bignum", (1, 0, -1, -1)) :- chosen("base", (4, 16, 1, 0)).
+lt("ghc_bignum", (2, 0, -1, -1)) :- chosen("base", (4, 16, 1, 0)).
+pkg("base", (4, 2, 0, 0)).
+wanted("rts") :- chosen("base", (4, 2, 0, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 2, 0, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 2, 0, 0)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 2, 0, 0)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 0)).
+pkg("base", (4, 2, 0, 1)).
+wanted("rts") :- chosen("base", (4, 2, 0, 1)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 1)).
+wanted("ghc_prim") :- chosen("base", (4, 2, 0, 1)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 1)).
+wanted("integer_simple") :- chosen("base", (4, 2, 0, 1)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 1)).
+wanted("integer_gmp") :- chosen("base", (4, 2, 0, 1)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 1)).
+pkg("base", (4, 2, 0, 2)).
+wanted("rts") :- chosen("base", (4, 2, 0, 2)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 2)).
+wanted("ghc_prim") :- chosen("base", (4, 2, 0, 2)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 2)).
+wanted("integer_simple") :- chosen("base", (4, 2, 0, 2)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 2)).
+wanted("integer_gmp") :- chosen("base", (4, 2, 0, 2)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 2, 0, 2)).
+pkg("base", (4, 3, 0, 0)).
+wanted("rts") :- chosen("base", (4, 3, 0, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 3, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 3, 0, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 3, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 3, 0, 0)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 3, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 3, 0, 0)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 3, 0, 0)).
+pkg("base", (4, 3, 1, 0)).
+wanted("rts") :- chosen("base", (4, 3, 1, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 3, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 3, 1, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 3, 1, 0)).
+wanted("integer_simple") :- chosen("base", (4, 3, 1, 0)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 3, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 3, 1, 0)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 3, 1, 0)).
+pkg("base", (4, 4, 0, 0)).
+wanted("rts") :- chosen("base", (4, 4, 0, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 4, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 4, 0, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 4, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 4, 0, 0)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 4, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 4, 0, 0)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 4, 0, 0)).
+pkg("base", (4, 4, 1, 0)).
+wanted("rts") :- chosen("base", (4, 4, 1, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 4, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 4, 1, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 4, 1, 0)).
+wanted("integer_simple") :- chosen("base", (4, 4, 1, 0)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 4, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 4, 1, 0)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 4, 1, 0)).
+pkg("base", (4, 5, 0, 0)).
+wanted("rts") :- chosen("base", (4, 5, 0, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 5, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 5, 0, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 5, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 5, 0, 0)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 5, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 5, 0, 0)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 5, 0, 0)).
+pkg("base", (4, 5, 1, 0)).
+wanted("rts") :- chosen("base", (4, 5, 1, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 5, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 5, 1, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 5, 1, 0)).
+wanted("integer_simple") :- chosen("base", (4, 5, 1, 0)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 5, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 5, 1, 0)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 5, 1, 0)).
+pkg("base", (4, 6, 0, 0)).
+wanted("rts") :- chosen("base", (4, 6, 0, 0)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 6, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 6, 0, 0)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 6, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 6, 0, 0)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 6, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 6, 0, 0)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 6, 0, 0)).
+pkg("base", (4, 6, 0, 1)).
+wanted("rts") :- chosen("base", (4, 6, 0, 1)).
+get("rts", (0, -1, -1, -1)) :- chosen("base", (4, 6, 0, 1)).
+wanted("ghc_prim") :- chosen("base", (4, 6, 0, 1)).
+get("ghc_prim", (0, -1, -1, -1)) :- chosen("base", (4, 6, 0, 1)).
+wanted("integer_simple") :- chosen("base", (4, 6, 0, 1)).
+get("integer_simple", (0, -1, -1, -1)) :- chosen("base", (4, 6, 0, 1)).
+wanted("integer_gmp") :- chosen("base", (4, 6, 0, 1)).
+get("integer_gmp", (0, -1, -1, -1)) :- chosen("base", (4, 6, 0, 1)).
+pkg("base", (4, 7, 0, 0)).
+wanted("rts") :- chosen("base", (4, 7, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 7, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 7, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 7, 0, 0)).
+get("ghc_prim", (0, 3, 1, -1)) :- chosen("base", (4, 7, 0, 0)).
+lt("ghc_prim", (0, 4, -1, -1)) :- chosen("base", (4, 7, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 7, 0, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 7, 0, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 7, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 7, 0, 0)).
+get("integer_gmp", (0, 5, 1, -1)) :- chosen("base", (4, 7, 0, 0)).
+lt("integer_gmp", (0, 6, -1, -1)) :- chosen("base", (4, 7, 0, 0)).
+pkg("base", (4, 7, 0, 1)).
+wanted("rts") :- chosen("base", (4, 7, 0, 1)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 7, 0, 1)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 7, 0, 1)).
+wanted("ghc_prim") :- chosen("base", (4, 7, 0, 1)).
+get("ghc_prim", (0, 3, 1, -1)) :- chosen("base", (4, 7, 0, 1)).
+lt("ghc_prim", (0, 4, -1, -1)) :- chosen("base", (4, 7, 0, 1)).
+wanted("integer_simple") :- chosen("base", (4, 7, 0, 1)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 7, 0, 1)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 7, 0, 1)).
+wanted("integer_gmp") :- chosen("base", (4, 7, 0, 1)).
+get("integer_gmp", (0, 5, 1, -1)) :- chosen("base", (4, 7, 0, 1)).
+lt("integer_gmp", (0, 6, -1, -1)) :- chosen("base", (4, 7, 0, 1)).
+pkg("base", (4, 7, 0, 2)).
+wanted("rts") :- chosen("base", (4, 7, 0, 2)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 7, 0, 2)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 7, 0, 2)).
+wanted("ghc_prim") :- chosen("base", (4, 7, 0, 2)).
+get("ghc_prim", (0, 3, 1, -1)) :- chosen("base", (4, 7, 0, 2)).
+lt("ghc_prim", (0, 4, -1, -1)) :- chosen("base", (4, 7, 0, 2)).
+wanted("integer_simple") :- chosen("base", (4, 7, 0, 2)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 7, 0, 2)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 7, 0, 2)).
+wanted("integer_gmp") :- chosen("base", (4, 7, 0, 2)).
+get("integer_gmp", (0, 5, 1, -1)) :- chosen("base", (4, 7, 0, 2)).
+lt("integer_gmp", (0, 6, -1, -1)) :- chosen("base", (4, 7, 0, 2)).
+pkg("base", (4, 8, 0, 0)).
+wanted("rts") :- chosen("base", (4, 8, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 8, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 8, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 8, 0, 0)).
+get("ghc_prim", (0, 4, -1, -1)) :- chosen("base", (4, 8, 0, 0)).
+lt("ghc_prim", (0, 5, -1, -1)) :- chosen("base", (4, 8, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 8, 0, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 8, 0, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 8, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 8, 0, 0)).
+get("integer_gmp", (0, 5, 1, -1)) :- chosen("base", (4, 8, 0, 0)).
+lt("integer_gmp", (0, 6, -1, -1)) :- chosen("base", (4, 8, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 8, 0, 0)).
+get("integer_gmp", (1, 0, -1, -1)) :- chosen("base", (4, 8, 0, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 8, 0, 0)).
+pkg("base", (4, 8, 1, 0)).
+wanted("rts") :- chosen("base", (4, 8, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 8, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 8, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 8, 1, 0)).
+get("ghc_prim", (0, 4, -1, -1)) :- chosen("base", (4, 8, 1, 0)).
+lt("ghc_prim", (0, 5, -1, -1)) :- chosen("base", (4, 8, 1, 0)).
+wanted("integer_simple") :- chosen("base", (4, 8, 1, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 8, 1, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 8, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 8, 1, 0)).
+get("integer_gmp", (0, 5, 1, -1)) :- chosen("base", (4, 8, 1, 0)).
+lt("integer_gmp", (0, 6, -1, -1)) :- chosen("base", (4, 8, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 8, 1, 0)).
+get("integer_gmp", (1, 0, -1, -1)) :- chosen("base", (4, 8, 1, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 8, 1, 0)).
+pkg("base", (4, 8, 2, 0)).
+wanted("rts") :- chosen("base", (4, 8, 2, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 8, 2, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 8, 2, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 8, 2, 0)).
+get("ghc_prim", (0, 4, -1, -1)) :- chosen("base", (4, 8, 2, 0)).
+lt("ghc_prim", (0, 5, -1, -1)) :- chosen("base", (4, 8, 2, 0)).
+wanted("integer_simple") :- chosen("base", (4, 8, 2, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 8, 2, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 8, 2, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 8, 2, 0)).
+get("integer_gmp", (0, 5, 1, -1)) :- chosen("base", (4, 8, 2, 0)).
+lt("integer_gmp", (0, 6, -1, -1)) :- chosen("base", (4, 8, 2, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 8, 2, 0)).
+get("integer_gmp", (1, 0, -1, -1)) :- chosen("base", (4, 8, 2, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 8, 2, 0)).
+pkg("base", (4, 9, 0, 0)).
+wanted("rts") :- chosen("base", (4, 9, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 9, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 9, 0, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 9, 0, 0)).
+get("ghc_prim", (0, 5, -1, -1)) :- chosen("base", (4, 9, 0, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("base", (4, 9, 0, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 9, 0, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 9, 0, 0)).
+wanted("integer_simple") :- chosen("base", (4, 9, 0, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 9, 0, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 9, 0, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 9, 0, 0)).
+get("integer_gmp", (1, 0, -1, -1)) :- chosen("base", (4, 9, 0, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 9, 0, 0)).
+pkg("base", (4, 9, 1, 0)).
+wanted("rts") :- chosen("base", (4, 9, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("base", (4, 9, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("base", (4, 9, 1, 0)).
+wanted("ghc_prim") :- chosen("base", (4, 9, 1, 0)).
+get("ghc_prim", (0, 5, -1, -1)) :- chosen("base", (4, 9, 1, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("base", (4, 9, 1, 0)).
+wanted("invalid_cabal_flag_settings") :- chosen("base", (4, 9, 1, 0)).
+error("invalid package version chosen","invalid_cabal_flag_settings") :- chosen("base", (4, 9, 1, 0)).
+wanted("integer_simple") :- chosen("base", (4, 9, 1, 0)).
+get("integer_simple", (0, 1, 1, -1)) :- chosen("base", (4, 9, 1, 0)).
+lt("integer_simple", (0, 2, -1, -1)) :- chosen("base", (4, 9, 1, 0)).
+wanted("integer_gmp") :- chosen("base", (4, 9, 1, 0)).
+get("integer_gmp", (1, 0, -1, -1)) :- chosen("base", (4, 9, 1, 0)).
+lt("integer_gmp", (1, 1, -1, -1)) :- chosen("base", (4, 9, 1, 0)).
+pkg("integer_gmp", (0, 5, 1, 0)).
+wanted("ghc_prim") :- chosen("integer_gmp", (0, 5, 1, 0)).
+get("ghc_prim", (0, 3, 1, -1)) :- chosen("integer_gmp", (0, 5, 1, 0)).
+lt("ghc_prim", (0, 4, -1, -1)) :- chosen("integer_gmp", (0, 5, 1, 0)).
+pkg("integer_gmp", (1, 0, 0, 0)).
+wanted("ghc_prim") :- chosen("integer_gmp", (1, 0, 0, 0)).
+get("ghc_prim", (0, 4, -1, -1)) :- chosen("integer_gmp", (1, 0, 0, 0)).
+lt("ghc_prim", (0, 5, -1, -1)) :- chosen("integer_gmp", (1, 0, 0, 0)).
+pkg("integer_gmp", (1, 0, 0, 1)).
+wanted("ghc_prim") :- chosen("integer_gmp", (1, 0, 0, 1)).
+get("ghc_prim", (0, 5, -1, -1)) :- chosen("integer_gmp", (1, 0, 0, 1)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("integer_gmp", (1, 0, 0, 1)).
+pkg("integer_gmp", (1, 0, 1, 0)).
+wanted("ghc_prim") :- chosen("integer_gmp", (1, 0, 1, 0)).
+get("ghc_prim", (0, 5, 1, -1)) :- chosen("integer_gmp", (1, 0, 1, 0)).
+lt("ghc_prim", (0, 5, 2, -1)) :- chosen("integer_gmp", (1, 0, 1, 0)).
+pkg("integer_gmp", (1, 0, 2, 0)).
+wanted("ghc_prim") :- chosen("integer_gmp", (1, 0, 2, 0)).
+get("ghc_prim", (0, 5, 2, -1)) :- chosen("integer_gmp", (1, 0, 2, 0)).
+lt("ghc_prim", (0, 6, -1, -1)) :- chosen("integer_gmp", (1, 0, 2, 0)).
+pkg("integer_gmp", (1, 0, 3, 0)).
+wanted("ghc_prim") :- chosen("integer_gmp", (1, 0, 3, 0)).
+get("ghc_prim", (0, 6, 1, -1)) :- chosen("integer_gmp", (1, 0, 3, 0)).
+lt("ghc_prim", (0, 7, -1, -1)) :- chosen("integer_gmp", (1, 0, 3, 0)).
+pkg("ghc_prim", (0, 3, 1, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 3, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 3, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 3, 1, 0)).
+pkg("ghc_prim", (0, 4, 0, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 4, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 4, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 4, 0, 0)).
+pkg("ghc_prim", (0, 5, 0, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 5, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 5, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 5, 0, 0)).
+pkg("ghc_prim", (0, 5, 1, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 5, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 5, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 5, 1, 0)).
+pkg("ghc_prim", (0, 5, 1, 1)).
+wanted("rts") :- chosen("ghc_prim", (0, 5, 1, 1)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 5, 1, 1)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 5, 1, 1)).
+pkg("ghc_prim", (0, 5, 2, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 5, 2, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 5, 2, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 5, 2, 0)).
+pkg("ghc_prim", (0, 5, 3, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 5, 3, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 5, 3, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 5, 3, 0)).
+pkg("ghc_prim", (0, 6, 1, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 6, 1, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 6, 1, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 6, 1, 0)).
+pkg("ghc_prim", (0, 7, 0, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 7, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 7, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 7, 0, 0)).
+pkg("ghc_prim", (0, 8, 0, 0)).
+wanted("rts") :- chosen("ghc_prim", (0, 8, 0, 0)).
+get("rts", (1, 0, -1, -1)) :- chosen("ghc_prim", (0, 8, 0, 0)).
+lt("rts", (1, 1, -1, -1)) :- chosen("ghc_prim", (0, 8, 0, 0)).

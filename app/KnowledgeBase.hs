@@ -3,25 +3,31 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE TypeApplications #-}
 
-module KnowledgeBase where
+module KnowledgeBase(importAllFilesInDirectory, loadAndExtractCabalFile, prettyDeps) where
 
 import Control.Concurrent
 import Control.Concurrent.Async
+import Control.Monad
 import Control.Monad.IO.Class
 import Data.Foldable
 import Data.Function ((&))
-import Data.IORef (IORef, atomicModifyIORef, newIORef, atomicModifyIORef')
+import Data.IORef (IORef, atomicModifyIORef, atomicModifyIORef', newIORef)
 import Data.List
 import qualified Data.List as List
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
+import Debug.Trace (traceM, traceShow)
 import Distribution.PackageDescription
+    ( BuildInfo(targetBuildDepends),
+      Library(libBuildInfo),
+      PackageDescription(library, package) )
 import Distribution.PackageDescription.Configuration
 import Distribution.PackageDescription.Parsec
 import Distribution.Types.Dependency
 import Distribution.Types.PackageId
 import Distribution.Types.PackageName
 import Distribution.Types.Version
+import Distribution.Types.VersionInterval
 import Distribution.Types.VersionRange.Internal
 import Distribution.Verbosity
 import Streaming (chunksOf)
@@ -29,25 +35,18 @@ import Streaming.Prelude (Of, Stream)
 import qualified Streaming.Prelude as Str
 import qualified System.Directory as System
 import System.FilePath
-import Debug.Trace (traceM, traceShow)
 
 data RuleType
   = SimpleRule T.Text
   | DisjRule T.Text
+  | WantedRule T.Text
   deriving (Show, Eq, Ord)
 
--- | Loads and parses a Cabal file
-loadFile ::
-  (MonadIO m) =>
-  -- | The absolute path to the Cabal file
-  FilePath ->
-  m GenericPackageDescription
-loadFile path = liftIO $ readGenericPackageDescription silent path
 
 loadAndExtractCabalFile :: FilePath -> IO (Maybe (PackageName, Version, [Dependency]))
 loadAndExtractCabalFile fp = do
   gpk <- readGenericPackageDescription silent fp
-  traceM $ "Parsing " ++ fp
+  -- traceM $ "Parsing " ++ fp
   pure $ getBuildConstraints (flattenPackageDescription gpk)
 
 getBuildConstraints ::
@@ -62,7 +61,7 @@ getBuildConstraints pd = do
   let bi = libBuildInfo lib
       bd = targetBuildDepends bi
       pkg = package pd
-  traceM $ "Got constraints of " ++ show (pkgName pkg)
+  -- traceM $ "Got constraints of " ++ show (pkgName pkg)
   pure (pkgName pkg, pkgVersion pkg, bd)
 
 -- | Finds all cabal files in the specified directory, and inserts them into the database after extracting the relevant data
@@ -84,11 +83,9 @@ importAllFilesInDirectory dir = do
     newCount <- liftIO $ modifyMVar countMvar (\c -> pure (c + size, c + size))
     forM_ chunk $ \case
       Nothing -> pure ()
-      Just triple@(name, ver, deps) -> do
-        traceM $ "Prettify deps of: " ++ show name ++ " ver: " ++ show ver ++ " deps: " ++ show deps
+      Just triple@(name, ver, _deps) -> do
         x <- liftIO $ prettyDeps ref triple
-        traceM $ "Prettified deps of: " ++ show name
-        let fp = T.unpack (prettyName name) <> "-" <> T.unpack (fileNameVersion ver) <.> "txt"
+        let fp = T.unpack (prettyName' name) <> "-" <> T.unpack (fileNameVersion ver) <.> "txt"
         liftIO $ T.writeFile ("big-db" </> fp) x
 
     liftIO . putStrLn $ "✅ Processed " <> show newCount <> " new cabal files"
@@ -116,9 +113,14 @@ prettyDeps ref (name, version, deps) = do
   prettyRuleType :: RuleType -> T.Text
   prettyRuleType (SimpleRule r) = r <> " :- " <> ifChosen <> "."
   prettyRuleType (DisjRule r) = r <> "."
+  prettyRuleType (WantedRule r) = r <> " :- " <> ifChosen <> "."
+
+prettyName' :: PackageName -> T.Text
+prettyName' = slugifyName . T.pack . unPackageName
+
 
 prettyName :: PackageName -> T.Text
-prettyName = slugifyName . T.pack . unPackageName
+prettyName n = "\"" <> (slugifyName . T.pack $ unPackageName n) <> "\""
 
 prettyVersion :: Version -> T.Text
 prettyVersion version =
@@ -149,50 +151,63 @@ versionAddOne v = mkVersion $ init listVer' ++ [last listVer' + 1]
  where
   listVer' = versionNumbers v
 
-versionNextMajor :: Version -> Version
-versionNextMajor v 
-  | length listVer' == 1 = mkVersion [last listVer' + 1]
-  | otherwise = mkVersion $ head listVer' : head (tail listVer') + 1 : tail (tail listVer')
- where
-  listVer' = versionNumbers v
-
-
 constraints :: IORef Int -> Dependency -> IO [RuleType]
-constraints ref dep = prettyVersionRange (depVerRange dep)
+constraints ref dep = do
+  pVR <- prettyVersionRange (depVerRange dep)
+  let wantedRule = WantedRule $ "wanted(" <> name <> ")"
+  pure $ wantedRule : pVR
  where
   name = prettyName $ depPkgName dep
   prettyVersionRange :: VersionRange -> IO [RuleType]
-  prettyVersionRange = \case
-    AnyVersion -> pure [SimpleRule $ "wanted(" <> name <> ")"]
-    ThisVersion ver -> pure [SimpleRule $ "chosen(" <> name <> ", (" <> prettyVersionConstraint ver <> "))"]
-    LaterVersion ver -> pure [SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint (versionAddOne ver) <> "))"]
-    OrLaterVersion ver -> pure [SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint ver <> "))"]
-    EarlierVersion ver -> pure [SimpleRule $ "lt(" <> name <> ", (" <> prettyVersionConstraint ver <> "))"]
-    OrEarlierVersion ver -> pure [SimpleRule $ "lt(" <> name <> ", (" <> prettyVersionConstraint (versionSubtractOne ver) <> "))"]
-    WildcardVersion ver -> pure [SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint ver <> "))", SimpleRule $ "lt(" <> name <> ", (" <> prettyVersionConstraint (versionAddOne ver) <> "))"]
-    MajorBoundVersion ver -> pure [SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint ver <> "))", SimpleRule $ "lt(" <> name <> ", (" <> prettyVersionConstraint (versionNextMajor ver) <> "))"]
-    UnionVersionRanges verR1 verR2 ->
-      do
-        ver2Id <- atomicModifyIORef' ref (\x -> (x + 1, x))
-        ver1Id <- atomicModifyIORef' ref (\x -> (x + 1, x))
-        traceM $ "Union Range: " ++ show ver2Id ++ " || " ++ show ver1Id
-        let ver1RuleName = T.pack $ "genRule" <> show ver1Id
-        let ver2RuleName = T.pack $ "genRule" <> show ver2Id
-        prettyVerR1 <- prettyVersionRange verR1
-        prettyVerR2 <- prettyVersionRange verR2
-        pure $
-          [SimpleRule $ "{ " <> ver1RuleName <> "; " <> ver2RuleName <> " }"]
-            <> [processNestedDisjunction ver1RuleName v | v <- prettyVerR1]
-            <> [processNestedDisjunction ver2RuleName v | v <- prettyVerR2]
-        where
-          processNestedDisjunction :: T.Text -> RuleType -> RuleType
-          processNestedDisjunction n (SimpleRule rT) =  DisjRule (rT <> " :- " <> n)
-          processNestedDisjunction _ (DisjRule rT) = DisjRule rT
+  prettyVersionRange vr =
+    -- traceShow (asVersionIntervals vr) $
+    case asVersionIntervals vr of
+    [] -> pure [SimpleRule $ "error(\"invalid package version chosen\"," <> name <> ")"]
+    [vI] -> pure $ intervalToRule vI
+    vIntervals -> do
+      ruleNamesVersions <-
+        forM
+          vIntervals
+          ( \v -> do
+              rId <- atomicModifyIORef' ref (\x -> (x + 1, x))
+              let rName = T.pack $ "genRule" <> show rId
+              let prettyVer = intervalToRule v
+              pure (rName, prettyVer)
+          )
+      pure
+        ( SimpleRule ("{ " <> T.intercalate " ; " (map fst ruleNamesVersions) <> " }")
+            : [ processNestedDisjunction rulename rule
+              | rNV <- ruleNamesVersions
+              , let rulename = fst rNV
+              , rule <- snd rNV
+              ]
+        )
+  intervalToRule :: VersionInterval -> [RuleType]
+  intervalToRule (LowerBound lb InclusiveBound, UpperBound ub InclusiveBound) =
+    [ SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint lb <> "))"
+    , SimpleRule $ "lt(" <> name <> ", (" <> prettyVersionConstraint (versionAddOne ub) <> "))"
+    ]
+  intervalToRule (LowerBound lb ExclusiveBound, UpperBound ub InclusiveBound) =
+    [ SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint (versionAddOne lb) <> "))"
+    , SimpleRule $ "lt(" <> name <> ", (" <> prettyVersionConstraint (versionAddOne ub) <> "))"
+    ]
+  intervalToRule (LowerBound lb InclusiveBound, UpperBound ub ExclusiveBound) =
+    [ SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint lb <> "))"
+    , SimpleRule $ "lt(" <> name <> ", (" <> prettyVersionConstraint ub <> "))"
+    ]
+  intervalToRule (LowerBound lb ExclusiveBound, UpperBound ub ExclusiveBound) =
+    [ SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint (versionAddOne lb) <> "))"
+    , SimpleRule $ "lt(" <> name <> ", (" <> prettyVersionConstraint ub <> "))"
+    ]
+  intervalToRule (LowerBound lb InclusiveBound, NoUpperBound) =
+    [SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint lb <> "))"]
+  intervalToRule (LowerBound lb ExclusiveBound, NoUpperBound) =
+    [SimpleRule $ "get(" <> name <> ", (" <> prettyVersionConstraint (versionAddOne lb) <> "))"]
 
-    IntersectVersionRanges verR1 verR2 ->
-      prettyVersionRange verR1 <> prettyVersionRange verR2
-    VersionRangeParens verR ->
-      prettyVersionRange verR
+  processNestedDisjunction :: T.Text -> RuleType -> RuleType
+  processNestedDisjunction n (SimpleRule rT) = DisjRule (rT <> " :- " <> n)
+  processNestedDisjunction _ (DisjRule rT) = DisjRule rT
+  processNestedDisjunction _ (WantedRule _) = error "disjunction on wanted rule"
 
 slugifyName :: T.Text -> T.Text
 slugifyName = T.replace " " "" . T.replace "-" "_"

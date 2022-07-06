@@ -1,0 +1,5 @@
+pkg("cabal_test_stuff", (0, 1, 0, 0)).
+chosen("cabal_test_stuff",(0, 1, 0, 0)).
+wanted("base") :- chosen("cabal_test_stuff", (0, 1, 0, 0)).
+get("base", (4, 14, 3, 0)) :- chosen("cabal_test_stuff", (0, 1, 0, 0)).
+lt("base", (4, 15, -1, -1)) :- chosen("cabal_test_stuff", (0, 1, 0, 0)).

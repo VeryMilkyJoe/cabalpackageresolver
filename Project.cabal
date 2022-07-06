@@ -40,7 +40,8 @@ executable Project
                       filepath,
                       streaming,
                       Cabal,
-                      async
+                      async,
+                      unordered-containers
 
 
     hs-source-dirs:   app
